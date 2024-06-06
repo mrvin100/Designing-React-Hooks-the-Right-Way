@@ -1,0 +1,10 @@
+# Build the code yourself
+
+## npm
+firstly install Node js and check the installed version by run command : node -v
+## create React App
+npx create-react-app my-app
+cd my-app
+yarn start
+
+
