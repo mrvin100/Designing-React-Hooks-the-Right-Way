@@ -7,4 +7,48 @@ npx create-react-app my-app
 cd my-app
 yarn start
 
+# build an app with components
+
+### single page
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const App = () => {
+        return <h1>Hello World</h1>;
+      };
+      const rootEl = document.getElementById("root");
+      ReactDOM.render(<App />, rootEl);
+    </script>
+  </body>
+</html>
+
+### multiple pages
+
+const Home = () => {
+  return <h1>Home Page</h1>
+};
+
+const Product = () => {
+  return <h1>Product Page</h1>
+};
+const Route = ({ home }) => {
+  return home ? <Home /> : <Product />
+};
+
+function App() {
+  const home = true;
+  return <Route home={home} />
+}
+
+export default App;
+const rootEl = document.getElementById("root");
+ReactDOM.render(<App />, rootEl);
+
+
 
